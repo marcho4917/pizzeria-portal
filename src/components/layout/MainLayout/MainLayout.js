@@ -4,7 +4,7 @@ import PageNav from '../PageNav/PageNav';
 
 const MainLayout = (props) => (
   <div>
-    <PageNav/>
+    <PageNav />
     {props.children}
   </div>
 );
