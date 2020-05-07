@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Waiter = ({id}) => (
   <div className={styles.component}>
     <Link to={`/waiter/order/new`} activeClassName='active'>new order</Link>
-    <Link to={`/waiter/order/${id}`} activeClassName='active'>waiter order {id} </Link>
+    <Link to={`/waiter/order/123abc`} activeClassName='active'>waiter order 123abc </Link>
   </div>
 );
 

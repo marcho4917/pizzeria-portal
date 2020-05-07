@@ -1,10 +1,13 @@
 import React from 'react';
-import styles from './Tables.module.scss';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const TableBooked = () => (
-  <div className={styles.component}>
-    <h2>Tables view</h2>
-  </div>
+const TableBooked = ({id}) => (
+  <Link to={`/tables/booking/${id}`} />
 );
+
+TableBooked.propTypes = {
+  id: PropTypes.string,
+};
 
 export default TableBooked;
