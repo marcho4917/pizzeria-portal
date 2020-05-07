@@ -10,7 +10,7 @@ const MainLayout = (props) => (
 );
 
 MainLayout.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default MainLayout;
