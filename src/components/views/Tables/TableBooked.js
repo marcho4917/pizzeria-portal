@@ -2,49 +2,44 @@ import React from 'react';
 import styles from './Tables.module.scss';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-
-const demoContent = [
-  {time: '10:00-11:00', people: 3, name: 'Fox', apetisers: 'yes'},
-];
+import TextField from '@material-ui/core/TextField';
 
 const TableBooked = (props) => (
-  <Paper className={styles.component}>
+  <Paper className={styles.component} elevation={3}>
     <div>
       <h3>Reservation {`${props.match.params.id}`} details</h3>
     </div>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Time</TableCell>
-          <TableCell>Number of people</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Appetisers</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {demoContent.map(row => (
-          <TableRow key={row.time}>
-            <TableCell component="th" scope="row">
-              {row.time}
-            </TableCell>
-            <TableCell>
-              {row.people} 
-            </TableCell>
-            <TableCell>
-              {row.name}
-            </TableCell>
-            <TableCell>
-              {row.apetisers}  
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <div className={styles.formular}>
+      <TextField
+        id="datetime-local"
+        label="Date & time"
+        type="datetime-local"
+        defaultValue="2017-05-24T10:30"
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      <TextField
+        id="standard-basic" 
+        label="Table" 
+        defaultValue="Table 2"
+      />
+      <TextField 
+        id="standard-basic" 
+        label="Name" 
+        defaultValue="Fox"
+      />
+      <TextField 
+        id="standard-basic" 
+        label="Person value" 
+        defaultValue="4"
+      />
+      <TextField 
+        id="standard-basic" 
+        label="Appetisers" 
+        defaultValue="Yes"
+      />
+    </div>
   </Paper>
 );
 

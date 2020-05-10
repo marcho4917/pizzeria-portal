@@ -15,7 +15,8 @@
   border-radius: 50%;
   border: 18px solid #2B4C6F;
   text-align: center;
-  align-items: center;
   margin: 0 15px;
-  justify-content: center
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
