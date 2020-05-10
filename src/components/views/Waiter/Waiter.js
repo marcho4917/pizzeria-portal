@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const demoContent = [
   {id: '1', status: 'free', order: null},
@@ -17,30 +18,30 @@ const demoContent = [
   {id: '6', status: 'paid', order: 456},
 ];
 
-const renderActions = status => {
+const renderActions = (status, order) => {
   switch (status) {
     case 'free':
       return (
         <>
           <Button>thinking</Button>
-          <Button>new order</Button>
+          <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
         </>
       );
     case 'thinking':
       return (
-        <Button>new order</Button>
+        <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
       );
     case 'ordered':
       return (
-        <Button>prepared</Button>
+        <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${order}`}>prepared</Button>
       );
     case 'prepared':
       return (
-        <Button>delivered</Button>
+        <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${order}`}>delivered</Button>
       );
     case 'delivered':
       return (
-        <Button>paid</Button>
+        <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${order}`}>paid</Button>
       );
     case 'paid':
       return (
@@ -79,7 +80,7 @@ const Waiter = () => (
               )}
             </TableCell>
             <TableCell>
-              {renderActions(row.status)}
+              {renderActions(row.status, row.order)}
             </TableCell>
           </TableRow>
         ))}
