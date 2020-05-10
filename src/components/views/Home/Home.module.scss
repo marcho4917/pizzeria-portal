@@ -2,4 +2,21 @@
 
 .component {
   padding: $base-size;
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.circle {
+  width: 200px;
+	height: 200px;
+  border-radius: 50%;
+  border: 18px solid #2B4C6F;
+  text-align: center;
+  align-items: center;
+  margin: 0 15px;
+  display: flex;
+  justify-content: center
 }

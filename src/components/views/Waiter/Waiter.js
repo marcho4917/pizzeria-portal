@@ -52,7 +52,7 @@ const renderActions = status => {
 };
 
 const Waiter = () => (
-  <Paper className={styles.component}>
+  <Paper className={styles.component} elevation={3}>
     <Table>
       <TableHead>
         <TableRow>

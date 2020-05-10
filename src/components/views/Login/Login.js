@@ -8,13 +8,13 @@ import Box from '@material-ui/core/Box';
 const Login = () => {
   return(
     <div className={styles.component}>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" m={2}>
         <TextField id="standard-basic" label="login" /> 
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" m={2}>
         <TextField id="standard-basic" label="Password" />
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" m={2}>
         <Button variant="contained" component={Link} to={process.env.PUBLIC_URL + '/'}>START WORK!</Button>
       </Box>
     </div>

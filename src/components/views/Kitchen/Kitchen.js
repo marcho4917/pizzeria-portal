@@ -9,12 +9,12 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 const demoContent = [
-  {status: 'ordered', order: 321},
-  {status: 'ordered', order: 758},
-  {status: 'ordered', order: 123},
-  {status: 'new order', order: 234},
-  {status: 'new order', order: 345},
-  {status: 'ordered', order: 456},
+  {status: 'ordered', order: 321, table: 1, details: 'lorem ipsum'},
+  {status: 'ordered', order: 758, table: 2, details: 'lorem ipsum'},
+  {status: 'ordered', order: 123, table: 2, details: 'lorem ipsum'},
+  {status: 'new order', order: 234, table: 5, details: 'lorem ipsum'},
+  {status: 'new order', order: 345, table: 6, details: 'lorem ipsum'},
+  {status: 'ordered', order: 456, table: 6, details: 'lorem ipsum'},
 ];
 
 const renderActions = status => {
@@ -22,14 +22,12 @@ const renderActions = status => {
     case 'ordered':
       return (
         <>
-          <Button>IN PROGRESS</Button>
           <Button>READY</Button>
         </>
       );
     case 'new order':
       return (
         <>
-          <Button>IN PROGRESS</Button>
           <Button>READY</Button>
         </>
       );
@@ -39,12 +37,14 @@ const renderActions = status => {
 };
 
 const Kitchen = () => (
-  <Paper className={styles.component}>
+  <Paper className={styles.component} elevation={3}>
     <Table>
       <TableHead>
         <TableRow>
           <TableCell>Order</TableCell>
           <TableCell>Status</TableCell>
+          <TableCell>Table</TableCell>
+          <TableCell>Order details</TableCell>
           <TableCell>Action</TableCell>
         </TableRow>
       </TableHead>
@@ -56,6 +56,12 @@ const Kitchen = () => (
             </TableCell>
             <TableCell>
               {row.status}
+            </TableCell>
+            <TableCell>
+              {row.table}
+            </TableCell>
+            <TableCell>
+              {row.details}
             </TableCell>
             <TableCell>
               {renderActions(row.status)}
