@@ -98,11 +98,10 @@ class Waiter extends React.Component {
                     {row.status}
                   </TableCell>
                   <TableCell>
-                    {row.order && (
+                    {row.status === 'free' || row.status === 'thinking' || row.status === 'new order' ? row.order === null: 
                       <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
                         {row.order}
-                      </Button>
-                    )}
+                      </Button>}
                   </TableCell>
                   <TableCell>
                     {this.renderActions(row.id, row.status)}
