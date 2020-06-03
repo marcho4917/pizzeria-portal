@@ -12,10 +12,10 @@ import Button from '@material-ui/core/Button';
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
-    tables: PropTypes.object,
+    tables: PropTypes.array,
     loading: PropTypes.shape({
       active: PropTypes.bool,
-      error: PropTypes.oneOfType(PropTypes.bool,PropTypes.string),
+      error: PropTypes.bool,
     }),
     fetchUpdate: PropTypes.func,
   }
@@ -98,7 +98,7 @@ class Waiter extends React.Component {
                     {row.status}
                   </TableCell>
                   <TableCell>
-                    {row.status === 'free' || row.status === 'thinking' || row.status === 'new order' ? row.order === null: 
+                    {row.status === 'free' || row.status === 'thinking' || row.status === 'new order' ? null : 
                       <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
                         {row.order}
                       </Button>}
