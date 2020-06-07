@@ -3,7 +3,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './components/views/Home/Home';
 import Login from './components/views/Login/Login';
-import Kitchen from './components/views/Kitchen/Kitchen';
+import Kitchen from './components/views/Kitchen/kitchenContainer';
 import Tables from './components/views/Tables/Tables';
 import Waiter from './components/views/Waiter/WaiterContainer';
 import TableBooked from './components/views/Tables/TableBooked';

@@ -218,7 +218,6 @@
         }
       }
     ],
-    "order": [],
     "event": [
       {
         "id": 1,
@@ -289,5 +288,13 @@
       {"id": 4, "status": "prepared", "order": 234},
       {"id": 5, "status": "delivered", "order": 345},
       {"id": 6, "status": "paid", "order": 456}
+     ],
+     "orders" : [
+      {"status": "ordered", "order": 444, "table": 1, "details": "lorem ipsum"},
+      {"status": "ordered", "order": 555, "table": 2, "details": "lorem ipsum"},
+      {"status": "ordered", "order": 666, "table": 2, "details": "lorem ipsum"},
+      {"status": "new order", "order": 777, "table": 5, "details": "lorem ipsum"},
+      {"status": "new order", "order": 888, "table": 6, "details": "lorem ipsum"},
+      {"status": "ordered", "order": 999, "table": 6, "details": "lorem ipsum"}
      ]
   }
