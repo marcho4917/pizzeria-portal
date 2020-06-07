@@ -20,7 +20,7 @@ const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
-export const updateStarted = (order, status) => ({ order, status, type: ORDER_UPDATE });
+export const updateStarted = (table, status) => ({ table, status, type: ORDER_UPDATE });
 
 /* thunk creators */
 export const fetchFromAPI = () => {
@@ -38,14 +38,14 @@ export const fetchFromAPI = () => {
   };
 };
   
-export const orderStatusUpdate = (order, status) => {
+export const orderStatusUpdate = (table, status) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
     Axios
       .get(`${api.url}/${api.orders}`)
       .then(() => {
-        dispatch(updateStarted(order, status));
+        dispatch(updateStarted(table, status));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
@@ -63,6 +63,16 @@ export default function reducer(statePart = [], action = {}) {
           active: true,
           error: false,
         },
+      };
+    }
+    case FETCH_SUCCESS: {
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: false,
+        },
+        data: action.payload,
       };
     }
     case FETCH_ERROR: {
