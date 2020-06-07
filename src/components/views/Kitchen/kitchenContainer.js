@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Kitchen from './Kitchen';
-import { getAll, getLoadingState, updateStatus } from '../../../redux/tablesRedux';
+import { getAll, getLoadingState, updateStatus, fetchFromAPI } from '../../../redux/tablesRedux';
 
 const mapStateToProps = (state) => ({
   orders: getAll(state),
@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  fetchOrders: () => dispatch(fetchFromAPI()),
   updateStarted: (order, status) => dispatch(updateStatus(order, status)),
 });
 

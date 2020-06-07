@@ -11,8 +11,14 @@ import Button from '@material-ui/core/Button';
 
 class Kitchen extends React.Component {
   static propTypes = {
+    fetchOrders: PropTypes.func,
     orders: PropTypes.array,
     updateStarted: PropTypes.func,
+  }
+
+  componentDidMount(){
+    const { fetchOrders } = this.props;
+    fetchOrders();
   }
 
   renderActions (order, status) {
