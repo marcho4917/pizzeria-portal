@@ -62,7 +62,7 @@
     "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.6"
   },
   "devDependencies": {
     "eslint-watch": "^6.0.1",
