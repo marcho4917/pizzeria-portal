@@ -1,9 +1,11 @@
+# Waiter app
+
 # Development
 
-## URLe dostępne dzięki `yarn start`
+## URL's available through 'yarn start'
 
- - http://localhost:3000 - biezacy projekt czyli panel administracyjny (`webpack-dev-server`)
- - http://localhost:3131 - strona pizzeri dla klientów
- - http://localhost:3131/api - url API projektu
- - http://localhost:3131/api/db - podgląd całej bazy danych w API
- - http://localhost:3131/panel - stan bieżącego projektu (panelu adm.) z momentu uruchomienia `yarn atart` (strona pod tym adresem nie będzie zmieniała się "na żywo" wraz ze zmianami wpowadznymi w plikach projektu)
+ - http://localhost:3000 - current project or administrative panel
+ - http://localhost:3131 - pizzeria website for customers
+ - http://localhost:3131/api - API
+ - http://localhost:3131/api/db - view the entire database in the API
+ - http://localhost:3131/panel - status of the current project (adm. panel) from the moment of starting the `yarn start`
